@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Network Folder Opener",
+  "version": "1.0",
+  "description": "Open network folder from Chrome",
+  "permissions": ["activeTab", "tabs"],
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "Open Network Folder",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
